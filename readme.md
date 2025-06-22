@@ -37,4 +37,4 @@ weather app/
 
 ---
 
-**Enjoy your
+**Enjoy your modern weather experience!**

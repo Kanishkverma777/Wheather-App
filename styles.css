@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(135deg, #181c24 0%, #232a34 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #232a34;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border-radius: 28px;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45), 0 1.5px 8px 0 rgba(44,83,100,0.18);
+  text-align: center;
+  width: 370px;
+  max-width: 95vw;
+  border: 1.5px solid #232a34;
+  transition: box-shadow 0.3s;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: #f7faff;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  font-size: 2.3rem;
+  text-shadow: 0 2px 16px #1a1f25, 0 0 8px #232a34;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#cityInput {
+  flex: 1;
+  padding: 0.8rem 1.1rem;
+  border: 1.5px solid #313a45;
+  border-radius: 12px;
+  font-size: 1.08rem;
+  outline: none;
+  background: #181c24;
+  color: #f7faff;
+  box-shadow: 0 1px 8px 0 #181c2455;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#cityInput:focus {
+  border: 1.5px solid #4fc3f7;
+  box-shadow: 0 2px 12px 0 #4fc3f755;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, #4fc3f7 0%, #1976d2 100%);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  color: #f7faff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 16px 0 #1976d255;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: none;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #1976d2 0%, #4fc3f7 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px 0 #1976d299;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+  user-select: none;
+}
+
+.toggle input {
+  display: none;
+}
+
+.slider {
+  width: 38px;
+  height: 22px;
+  background: #181c24;
+  border-radius: 12px;
+  position: relative;
+  margin-right: 0.5rem;
+  transition: background 0.3s;
+  cursor: pointer;
+  box-shadow: 0 0 8px #232a3444;
+  border: 1.5px solid #313a45;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  background: #4fc3f7;
+  border-radius: 50%;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 0 8px #1976d244;
+}
+
+.toggle input:checked + .slider:before {
+  transform: translateX(16px);
+  background: #1976d2;
+}
+
+.unit-label {
+  font-size: 1.1rem;
+  color: #90caf9;
+  font-weight: 700;
+  margin-left: 0.2rem;
+  text-shadow: none;
+}
+
+#result {
+  min-height: 120px;
+  color: #f7faff;
+  font-size: 1.15rem;
+  margin-top: 1.2rem;
+  background: #181c24;
+  border-radius: 18px;
+  padding: 1.2rem 0.7rem;
+  box-shadow: 0 2px 16px 0 #232a3422;
+  border: 1px solid #313a45;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  animation: fadeIn 0.6s;
+}
+
+#result .wi {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+  color: #4fc3f7;
+  text-shadow: 0 0 8px #232a34;
+}
+
+#result h2 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.4rem;
+  color: #f7faff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+}
+
+#result p {
+  margin: 0.2rem 0;
+  font-size: 1.08rem;
+  color: #b0bec5;
+}
+
+.forecast-section {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  overflow-x: auto;
+  justify-content: center;
+}
+
+.forecast-card {
+  background: #232a34;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px 0 #181c2422;
+  padding: 0.8rem 0.7rem;
+  min-width: 80px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #313a45;
+  animation: fadeInUp 0.5s;
+}
+
+.forecast-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 6px 24px 0 #1976d255;
+}
+
+.forecast-card .wi {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+  color: #4fc3f7;
+  text-shadow: none;
+}
+
+.forecast-card .day {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #90caf9;
+  text-shadow: none;
+}
+
+.forecast-card .temp {
+  font-size: 1.05rem;
+  color: #b0bec5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 99vw;
+    padding: 1.2rem 0.3rem;
+  }
+  .forecast-section {
+    gap: 0.3rem;
+  }
+}
